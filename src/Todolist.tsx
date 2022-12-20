@@ -2,6 +2,7 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import {Input} from "./components/Input";
 import EditableSpan from "./components/EditableSpan";
+import {Button} from "@mui/material";
 
 export type TaskType = {
 	id: string
@@ -67,9 +68,9 @@ export function Todolist(props: PropsType) {
 	return <div>
 		<h3>{/*{props.title}*/}
 			<EditableSpan title={props.title} callback={upDateTodoListHandler}/>
-			<button onClick={removeTodoListHandler}>x</button>
+			{/*<button onClick={removeTodoListHandler}>X</button>*/}
 
-			{/*<Button variant="contained" onClick={removeTodolist}>x</Button>*/}
+			<Button variant="contained" onClick={removeTodoListHandler}>x</Button>
 
 		</h3>
 
