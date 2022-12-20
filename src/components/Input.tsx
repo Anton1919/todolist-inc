@@ -1,4 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import Button from "@mui/material/Button"
+import TextField from "@mui/material/TextField";
 
 type PropsType = {
 	callback: (newTitle: string) => void
@@ -6,8 +8,8 @@ type PropsType = {
 
 export const Input = (props: PropsType) => {
 
-	let [title, setTitle] = useState("")
-	let [error, setError] = useState<string | null>(null)
+	const [title, setTitle] = useState("")
+	const [error, setError] = useState<string | null>(null)
 
 	const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		setTitle(e.currentTarget.value)
@@ -31,13 +33,31 @@ export const Input = (props: PropsType) => {
 
 	return (
 		<div>
-			<input value={title}
-						 onChange={onChangeHandler}
-						 onKeyDown={onKeyPressHandler}
-						 className={error ? "error" : ""}
+			{/*<input value={title}*/}
+			{/*			 onChange={onChangeHandler}*/}
+			{/*			 onKeyDown={onKeyPressHandler}*/}
+			{/*			 className={error ? "error" : ""}*/}
+			{/*/>*/}
+			{/*<button onClick={addTask}>+</button>*/}
+			<TextField
+				size="small"
+				id="outlined-basic"
+				label={error ? "Enter text please" : "Your text"}
+				variant="outlined"
+				error={!!error}
+				value={title}
+				onChange={onChangeHandler}
+				onKeyDown={onKeyPressHandler}
 			/>
-			<button onClick={addTask}>+</button>
-			{error && <div className="error-message">{error}</div>}
+
+			<Button
+				size="small"
+				variant="contained"
+				onClick={addTask}
+				style={{maxWidth: "38px", maxHeight: "38px", minWidth: "38px", minHeight: "38px", background: "black"}}
+
+			>+</Button>
+			{/*{error && <div className="error-message">{error}</div>}*/}
 		</div>
 	);
 };
