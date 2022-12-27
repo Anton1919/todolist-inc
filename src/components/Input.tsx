@@ -33,12 +33,6 @@ export const Input = (props: PropsType) => {
 
 	return (
 		<div>
-			{/*<input value={title}*/}
-			{/*			 onChange={onChangeHandler}*/}
-			{/*			 onKeyDown={onKeyPressHandler}*/}
-			{/*			 className={error ? "error" : ""}*/}
-			{/*/>*/}
-			{/*<button onClick={addTask}>+</button>*/}
 			<TextField
 				size="small"
 				id="outlined-basic"

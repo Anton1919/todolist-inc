@@ -133,10 +133,10 @@ function App() {
 
 						return (
 
-							<Grid item>
+							<Grid item key={el.id}>
 								<Paper style={{padding: "10px"}}>
 									<Todolist
-										key={el.id}
+										// key={el.id}
 										todoListID={el.id}
 										title={el.title}
 										tasks={tasksForTodolist}
@@ -149,11 +149,8 @@ function App() {
 										updateTask={updateTask}
 										updateTodoList={updateTodoList}
 									/>
-
 								</Paper>
 							</Grid>
-
-
 						)
 					})}
 				</Grid>
