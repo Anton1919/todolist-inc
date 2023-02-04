@@ -29,10 +29,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6009",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -s public",
     "jest:integration": "jest -c integration/jest.config.js",
-    "test:integration": "start-server-and-test storybook http-get://localhost:6009 jest:integration"
+    "test:integration": "start-server-and-test storybook http-get://localhost:6006 jest:integration"
   },
   "eslintConfig": {
     "extends": [

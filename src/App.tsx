@@ -7,6 +7,7 @@ import AppBar from '@mui/material/AppBar/AppBar';
 import {Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@mui/material";
 import {Menu} from "@mui/icons-material";
 
+
 export type FilterValuesType = "all" | "active" | "completed";
 export type TodolistType = {
     id: string
@@ -18,7 +19,8 @@ export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
 
- function App() {
+
+function App() {
     let todolistId1 = v1();
     let todolistId2 = v1();
 
@@ -37,6 +39,7 @@ export type TasksStateType = {
             {id: v1(), title: "React Book", isDone: true}
         ]
     });
+
 
     function removeTask(id: string, todolistId: string) {
         //достанем нужный массив по todolistId:
@@ -144,10 +147,10 @@ export type TasksStateType = {
                             let tasksForTodolist = allTodolistTasks;
 
                             if (tl.filter === "active") {
-                                tasksForTodolist = allTodolistTasks.filter(t => !t.isDone);
+                                tasksForTodolist = allTodolistTasks.filter(t => t.isDone === false);
                             }
                             if (tl.filter === "completed") {
-                                tasksForTodolist = allTodolistTasks.filter(t => t.isDone);
+                                tasksForTodolist = allTodolistTasks.filter(t => t.isDone === true);
                             }
 
                             return <Grid key={tl.id} item>
@@ -176,5 +179,4 @@ export type TasksStateType = {
     );
 }
 
-// @ts-ignore
-export default App
+export default App;
