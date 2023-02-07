@@ -19,7 +19,9 @@ const ADD_TASK = "ADD-TASK"
 const CHANGE_TASK_STATUS = "CHANGE-TASK-STATUS"
 const CHANGE_TASK_TITLE = "CHANGE-TASK-TITLE"
 
-export const tasksReducer = (state: TasksStateType, action: ActionType) => {
+const initialState: TasksStateType = {}
+
+export const tasksReducer = (state = initialState, action: ActionType) => {
 	switch (action.type) {
 		case REMOVE_TASK :
 			return {
